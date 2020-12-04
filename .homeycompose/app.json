@@ -1,0 +1,24 @@
+{
+  "id": "com.skyq",
+  "version": "0.0.2",
+  "compatibility": ">=4.2.0",
+  "sdk": 2,
+  "name": {
+    "en": "Sky Q"
+  },
+  "description": {
+    "en": "Basic control of a Sky Q box"
+  },
+  "category": [
+    "music"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Adrian Rockall",
+    "email": "ady@rockall.plus.com"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "com.skyq",
+  "version": "0.0.1",
+  "main": "app.js",
+  "devDependencies": {
+    "homey": "^2.9.2"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "node-upnp-utils": "0.0.5",
+    "xml2js": "^0.4.23"
+  }
+}
