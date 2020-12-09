@@ -14,6 +14,10 @@ upnp.on('added', (device) =>
     // }
 });
 
+upnp.on('error', (err) => {
+    console.log(err);
+});
+
 class MyDriver extends Homey.Driver
 {
     /**
