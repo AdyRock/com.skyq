@@ -1,3 +1,4 @@
+/*jslint node: true */
 'use strict';
 
 const Homey = require('homey');
@@ -17,11 +18,18 @@ class MyDevice extends Homey.Device
         this.registerCapabilityListener('onoff', this.onCapabilityOnOff.bind(this));
         this.registerCapabilityListener('channel_down', this.onCapabilityChannelDown.bind(this));
         this.registerCapabilityListener('channel_up', this.onCapabilityChannelUp.bind(this));
+        this.registerCapabilityListener('speaker_playing', this.onCapabilitySpeakerPlaying.bind(this));
 
         this.IP = this.getSetting('ip');
         this.remoteControl = new SkyRemote(this.IP);
         this.box = new SkyQ({ ip: this.IP });
         this.onOffTimer = null;
+        this.MAC = this.getSetting('MAC');
+        if (!this.MAC)
+        {
+            this.MAC = await this.box._getSystemInformation({key:'MACAddress'});
+            this.setSettings({'MAC': this.MAC});
+        }
 
         this.pollOnOff = this.pollOnOff.bind( this );
         this.pollOnOff();
@@ -29,14 +37,12 @@ class MyDevice extends Homey.Device
 
     async pollOnOff()
     {
-        this.box.getPowerState().then(isOn =>
-        {
+        this.box.getPowerState().then(isOn => {
             this.setCapabilityValue('onoff', isOn);
-        }).catch(err =>
-        {
-            console.error("Unable to determine power state")
-            console.error("Perhaps looking at this error will help you figure out why", err)
-        })
+        }).catch(err => {
+            console.error("Unable to determine power state");
+            console.error("Perhaps looking at this error will help you figure out why", err);
+        });
 
         clearTimeout(this.onOffTimer);
         this.onOffTimer = setTimeout(this.pollOnOff, 3000);
@@ -60,7 +66,12 @@ class MyDevice extends Homey.Device
      */
     async onSettings({ oldSettings, newSettings, changedKeys })
     {
-        this.log('MyDevice settings where changed');
+        if (changedKeys.indexOf("ip") >= 0)
+        {
+            this.ip = newSettings.ip;
+            this.remoteControl = new SkyRemote(this.IP);
+            this.box = new SkyQ({ ip: this.IP });
+        }
     }
 
     /**
@@ -98,6 +109,18 @@ class MyDevice extends Homey.Device
     async onCapabilityChannelUp(value, opts)
     {
         this.remoteControl.press('channelup');
+    }
+
+    async onCapabilitySpeakerPlaying(value, opts)
+    {
+        if (value)
+        {
+            this.remoteControl.press('play');
+        }
+        else
+        {
+            this.remoteControl.press('pause');
+        }
     }
 }
 

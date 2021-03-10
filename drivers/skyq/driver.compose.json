@@ -8,7 +8,8 @@
     "capabilities": [
         "channel_down",
         "channel_up",
-        "onoff"
+        "onoff",
+        "speaker_playing"
     ],
     "images":
     {
@@ -38,8 +39,22 @@
             "en": "IP Address"
         },
         "value": "",
-        "hint": {
-          "en": "Specifies the IP address of the Ky Q box on your network."
+        "hint":
+        {
+            "en": "Specifies the IP address of the SKy Q box on your network."
         }
-}]
+    },
+    {
+        "id": "MAC",
+        "type": "text",
+        "label":
+        {
+            "en": "MAC Address"
+        },
+        "value": "",
+        "hint":
+        {
+            "en": "Specifies the MAC address of the SKy Q box on your network."
+        }
+    }]
 }

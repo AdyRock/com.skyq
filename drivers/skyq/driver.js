@@ -1,3 +1,4 @@
+/*jslint node: true */
 'use strict';
 
 const Homey = require('homey');
@@ -14,7 +15,8 @@ upnp.on('added', (device) =>
     // }
 });
 
-upnp.on('error', (err) => {
+upnp.on('error', (err) =>
+{
     console.log(err);
 });
 
@@ -32,50 +34,59 @@ class MyDriver extends Homey.Driver
      * onPairListDevices is called when a user is adding a device and the 'list_devices' view is called.
      * This should return an array with the data of devices that are available for pairing.
      */
-    onPairListDevices(data, callback)
+    async onPairListDevices()
     {
         // Start the discovery process
         upnp.startDiscovery();
 
-        // Stop the discovery process in 15 seconds
-        setTimeout(() =>
+        function findFunc(element)
         {
-            upnp.stopDiscovery(() =>
+            return element.settings.ip === this;
+        }
+
+        return new Promise((resolve, reject) =>
+        {
+
+            // Stop the discovery process in 15 seconds
+            setTimeout(() =>
             {
-                console.log('Stopped the discovery process.');
-                var deviceList = upnp.getActiveDeviceList();
-                deviceList = deviceList.filter(entry => entry.headers['SERVER'] && (entry.headers['SERVER'].search('Sky') >= 0));
-                console.log(deviceList);
-
-                var devices = [];
-
-                for (var idx = 0; idx < deviceList.length; idx++)
+                upnp.stopDiscovery(() =>
                 {
-                    // Make sure we don't already have this IP
-                    var i = devices.findIndex(element => element.settings.ip === deviceList[idx].address);
-                    if (i < 0)
-                    {
-                        var server = deviceList[idx].headers['SERVER'].split(',');
-                        var model = server[1];
-                        devices.push(
-                        {
-                            "name": 'Sky ' + model + ": " + deviceList[idx].address,
-                            data:
-                            {
-                                "id": deviceList[idx].headers['01-NLS']
-                            },
-                            settings:
-                            {
-                                "ip": deviceList[idx].address
-                            }
-                        })
-                    }
-                }
+                    console.log('Stopped the discovery process.');
+                    var deviceList = upnp.getActiveDeviceList();
+                    deviceList = deviceList.filter(entry => entry.headers.SERVER && (entry.headers.SERVER.search('Sky') >= 0));
+                    console.log(deviceList);
 
-                //console.log( devices );
-                callback(null, devices);
-            });
-        }, 5000);
+                    var devices = [];
+
+                    for (var idx = 0; idx < deviceList.length; idx++)
+                    {
+                        // Make sure we don't already have this IP
+                        var i = devices.findIndex(findFunc, deviceList[idx].address);
+                        if (i < 0)
+                        {
+                            var server = deviceList[idx].headers.SERVER.split(',');
+                            var model = server[1];
+                            devices.push(
+                            {
+                                "name": 'Sky ' + model + ": " + deviceList[idx].address,
+                                data:
+                                {
+                                    "id": deviceList[idx].headers['01-NLS']
+                                },
+                                settings:
+                                {
+                                    "ip": deviceList[idx].address
+                                }
+                            });
+                        }
+                    }
+
+                    //console.log( devices );
+                    return resolve(devices);
+                });
+            }, 5000);
+        });
     }
 }
 
