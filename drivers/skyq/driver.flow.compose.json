@@ -1,0 +1,2277 @@
+{
+	"actions": [
+		{
+			"id": "send_coomands",
+			"title": {
+				"en": "Send remote commands"
+			},
+			"titleFormatted": {
+				"en": "Send these commands: [[c1]], [[c2]], [[c3]], [[c4]], [[c5]], [[c6]], [[c7]], [[c8]], [[c9]], [[c10]]"
+			},
+			"hint": {
+				"en": "Send remote commands. The parameters for C2 to C10 are optional. Example, to select a specific channel use Backup, Backup, 1, 0, 4."
+			},
+			"args": [
+				{
+					"name": "c1",
+					"type": "dropdown",
+					"title": {
+						"en": "C1"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en":"8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c2",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C2"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en":"8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c3",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C3"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c4",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C4"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c5",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C5"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c6",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C6"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c7",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C7"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c8",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C8"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c9",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C9"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				},
+				{
+					"name": "c10",
+					"required": false,
+					"type": "dropdown",
+					"title": {
+						"en": "C10"
+					},
+					"values": [
+						{
+							"id": "select",
+							"label": {
+								"en": "Select"
+							}
+						},
+						{
+							"id": "backup",
+							"label": {
+								"en": "Backup"
+							}
+						},
+						{
+							"id": "channelup",
+							"label": {
+								"en": "Channel Up"
+							}
+						},
+						{
+							"id": "channeldown",
+							"label": {
+								"en": "Channel Down"
+							}
+						},
+						{
+							"id":"interactive",
+							"label": {
+								"en": "Interactive"
+							}
+						},
+						{
+							"id": "help",
+							"label": {
+								"en": "Help"
+							}
+						},
+						{
+							"id": "search",
+							"label": {
+								"en": "Services"
+							}
+						},
+						{
+							"id": "tvguide",
+							"label": {
+								"en": "Home"
+							}
+						},
+						{
+							"id": "i",
+							"label": {
+								"en": "Information"
+							}
+						},
+						{
+							"id": "text",
+							"label": {
+								"en": "Text"
+							}
+						},
+						{
+							"id": "up",
+							"label": {
+								"en": "Up"
+							}
+						},
+						{
+							"id": "down",
+							"label": {
+								"en": "Down"
+							}
+						},
+						{
+							"id": "left",
+							"label": {
+								"en": "Left"
+							}
+						},
+						{
+							"id": "right",
+							"label": {
+								"en": "Right"
+							}
+						},
+						{
+							"id": "red",
+							"label": {
+								"en": "Red"
+							}
+						},
+						{
+							"id": "green",
+							"label": {
+								"en": "Green"
+							}
+						},
+						{
+							"id": "yellow",
+							"label": {
+								"en": "Yellow"
+							}
+						},
+						{
+							"id": "blue",
+							"label": {
+								"en": "Blue"
+							}
+						},
+						{
+							"id": "0",
+							"label": {
+								"en": "0"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "1"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "2"
+							}
+						},
+						{
+							"id": "3",
+							"label": {
+								"en": "3"
+							}
+						},
+						{
+							"id": "4",
+							"label": {
+								"en": "4"
+							}
+						},
+						{
+							"id": "5",
+							"label": {
+								"en": "5"
+							}
+						},
+						{
+							"id": "6",
+							"label": {
+								"en": "6"
+							}
+						},
+						{
+							"id": "7",
+							"label": {
+								"en": "7"
+							}
+						},
+						{
+							"id": "8",
+							"label": {
+								"en": "8"
+							}
+						},
+						{
+							"id": "9",
+							"label": {
+								"en": "9"
+							}
+						},
+						{
+							"id": "play",
+							"label": {
+								"en": "Play"
+							}
+						},
+						{
+							"id": "pause",
+							"label": {
+								"en": "Pause"
+							}
+						},
+						{
+							"id": "stop",
+							"label": {
+								"en": "Stop"
+							}
+						},
+						{
+							"id": "record",
+							"label": {
+								"en": "Record"
+							}
+						},
+						{
+							"id": "fastforward",
+							"label": {
+								"en": "Fast Forward"
+							}
+						},
+						{
+							"id": "rewind",
+							"label": {
+								"en": "Rewind"
+							}
+						},
+						{
+							"id": "boxoffice",
+							"label": {
+								"en": "Box Office"
+							}
+						},
+						{
+							"id": "sky",
+							"label": {
+								"en": "Sky"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

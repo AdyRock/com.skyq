@@ -18,5 +18,9 @@
     "2.0.0":
     {
         "en": "Updated to SDK3"
+    },
+    "2.0.1":
+    {
+        "en": "Added Action Flow card to send up to 10 remote commands in a row."
     }
 }
