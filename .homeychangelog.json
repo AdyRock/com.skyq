@@ -22,5 +22,9 @@
     "2.0.1":
     {
         "en": "Added Action Flow card to send up to 10 remote commands in a row."
-    }
+    },
+	"2.0.2":
+	{
+		"en": "Fix some crash reports and add some more error handling to the uPnP discovery process."
+	}
 }

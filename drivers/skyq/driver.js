@@ -3,6 +3,68 @@
 
 const Homey = require('homey');
 var upnp = require('node-upnp-utils');
+let discoveryRunning = false;
+let upnpProtocolPatchApplied = false;
+
+function isHttpLocation(location)
+{
+    if (typeof location !== 'string' || location.length === 0)
+    {
+        return false;
+    }
+
+    try
+    {
+        return new URL(location).protocol === 'http:';
+    }
+    catch (err)
+    {
+        return false;
+    }
+}
+
+function patchUpnpProtocolHandling(logError)
+{
+    if (upnpProtocolPatchApplied)
+    {
+        return;
+    }
+
+    const originalFetchDeviceDescriptions = upnp._fetchDeviceDescriptions;
+    if (typeof originalFetchDeviceDescriptions !== 'function')
+    {
+        return;
+    }
+
+    upnp._fetchDeviceDescriptions = function(...args)
+    {
+        const location = args[0];
+        if (!isHttpLocation(location))
+        {
+            return;
+        }
+
+        try
+        {
+            return originalFetchDeviceDescriptions.apply(this, args);
+        }
+        catch (err)
+        {
+            if (err && err.code === 'ERR_INVALID_PROTOCOL')
+            {
+                return;
+            }
+
+            if (typeof logError === 'function')
+            {
+                logError('Unexpected UPnP description fetch error', err);
+            }
+            throw err;
+        }
+    };
+
+    upnpProtocolPatchApplied = true;
+}
 
 // Set an event listener for 'added' event
 upnp.on('added', (device) =>
@@ -27,6 +89,7 @@ class MyDriver extends Homey.Driver
      */
     async onInit()
     {
+        patchUpnpProtocolHandling(this.error.bind(this));
         this.log('MyDriver has been initialized');
     }
 
@@ -37,7 +100,39 @@ class MyDriver extends Homey.Driver
     async onPairListDevices()
     {
         // Start the discovery process
-        upnp.startDiscovery();
+        try
+        {
+            upnp.startDiscovery();
+            discoveryRunning = true;
+        }
+        catch (err)
+        {
+            this.error('Unable to start the discovery process', err);
+        }
+
+        const safeStopDiscovery = (onStopped) =>
+        {
+            if (!discoveryRunning)
+            {
+                return onStopped();
+            }
+
+            try
+            {
+                upnp.stopDiscovery(() =>
+                {
+                    discoveryRunning = false;
+                    console.log('Stopped the discovery process.');
+                    return onStopped();
+                });
+            }
+            catch (err)
+            {
+                discoveryRunning = false;
+                this.error('Unable to stop the discovery process', err);
+                return onStopped();
+            }
+        };
 
         function findFunc(element)
         {
@@ -50,9 +145,8 @@ class MyDriver extends Homey.Driver
             // Stop the discovery process in 15 seconds
             setTimeout(() =>
             {
-                upnp.stopDiscovery(() =>
+                safeStopDiscovery(() =>
                 {
-                    console.log('Stopped the discovery process.');
                     var deviceList = upnp.getActiveDeviceList();
                     deviceList = deviceList.filter(entry => entry.headers.SERVER && (entry.headers.SERVER.search('Sky') >= 0));
                     console.log(deviceList);
